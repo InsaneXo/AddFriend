@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Follow Page</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #main {
+        height: 100%;
+        width: 100%;
+        background-color: blueviolet;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        background-color: rgb(232, 205, 205);
+        height: 635px;
+        width: 353px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .profile-sec {
+        width: 100%;
+        background-color: aqua;
+        height: 202px;
+        position: relative;
+    }
+
+    .background-img {
+        width: 100%;
+    }
+
+    .background-img img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        filter: brightness(76%);
+    }
+
+    .profile-img {
+        height: 96px;
+        width: 96px;
+        border-radius: 50%;
+        background-image: url(./img/dog.jpg);
+        background-position: center;
+        background-size: cover;
+        border: 6px solid rgb(232, 205, 205);
+        position: absolute;
+        bottom: -46px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .btns {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        height: 67px;
+        align-items: center;
+    }
+
+    .btns button {
+        padding: 10px 41px;
+        background-color: blueviolet;
+        border: none;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .btns button:hover {
+        background-color: darkblue;
+    }
+
+    .name {
+        text-align: center;
+        margin-top: 39px;
+    }
+
+    .name h2 {
+        font-weight: 400;
+        letter-spacing: 2px;
+    }
+
+    .moreOptions {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .moreOptions i {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background-color: blueviolet;
+        color: white;
+        cursor: pointer;
+    }
+
+    .moreOptions i:hover {
+        background-color: darkblue;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .sub-box {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 4px;
+    }
+
+    .smllogo {
+        background-color: blue;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        border: 4px solid white;
+        overflow: hidden;
+    }
+
+    .smllogo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .heading {
+        padding: 0 8px;
+        height: 32px;
+        display: flex;
+        align-items: end;
+        font-size: 12px;
+    }
+
+    .heading h3 {
+        font-weight: 400;
+    }
+
+    .moreFriend {
+        margin-top: 5px;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        height: 229px;
+        gap: 9px;
+    }
+
+    .proName h3 {
+        font-weight: 400;
+    }
+
+    .followbtn button {
+        padding: 8px 20px;
+        border: none;
+        border-radius: 10px;
+        background-color: blueviolet;
+        color: white;
+        cursor: pointer;
+    }
+
+    .followbtn button:hover {
+        background-color: darkblue;
+    }
+
+    .profileMain {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div class="container">
+            <div class="profile-sec">
+                <div class="background-img">
+                    <img src="./img/woman.jpg" alt="">
+                </div>
+                <div class="profile-img"></div>
+            </div>
+            <div class="name">
+                <h2>Jennie Kim</h2>
+            </div>
+            <div class="btns">
+                <button id="Follow">Follow</button>
+            </div>
+            <div class="moreOptions">
+                <i class="fa-solid fa-phone"></i>
+                <i class="fa-solid fa-video"></i>
+                <i class="fa-regular fa-message"></i>
+                <i class="fa-solid fa-ban"></i>
+            </div>
+
+            <div class="heading">
+                <h3>More Friends</h3>
+            </div>
+            <div class="moreFriend">
+                <div class="box">
+                </div>
+            </div>
+        </div>
+    </div>
+    <template id="template">
+        <div class="sub-box">
+            <div class="profileMain">
+                <div class="smllogo">
+                    <img src="./img/dog.jpg" alt="">
+                </div>
+                <div class="proName">
+                    <h3 id="name">hello</h3>
+                </div>
+            </div>
+            <div class="followbtn">
+                <button id="Follow2">Follow</button>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        const random = (rn) => {
+            return rn = Math.floor(Math.random() * name.length)
+        }
+
+        let box = document.querySelector('.box')
+        let name = ['Adam Levis', 'Jonathan', 'David', 'Lisa', 'Selena', 'Priya', 'Roman', 'Arjun', 'Ankit', 'Kaivta', 'Shyam', 'Raj', 'anuj', 'john', 'Bipin', 'Pankaj']
+        let follow = document.querySelector('#Follow')
+        let flag = 1
+
+
+        for (let i = 1; i <= 100; i++) {
+            let template = document.querySelector('#template')
+            let rand = random()
+            let clone = template.content.cloneNode(true)
+            clone.querySelector('#name').textContent = name[rand]
+            clone.querySelectorAll('#Follow2').forEach((btn) => {
+                let choice = 1
+                btn.addEventListener('click', (e) => {
+                    if(choice === 1){
+                        e.target.textContent = 'Following'
+                        e.target.style.backgroundColor = 'gray'
+                        choice = 0
+                    }
+                    else if(choice === 0){
+                        e.target.textContent = 'Follow'
+                        e.target.style.backgroundColor = ''
+                        choice = 1
+                    }
+                })
+            })
+            box.appendChild(clone)
+        }
+
+
+
+        follow.addEventListener('click', () => {
+            if (flag === 1) {
+                follow.textContent = 'Following'
+                follow.style.backgroundColor = 'gray'
+                flag = 0
+            }
+            else if (flag === 0) {
+                follow.textContent = 'Follow'
+                follow.style.backgroundColor = ''
+                flag = 1
+            }
+        })
+
+    </script>
+</body>
+
+</html>
